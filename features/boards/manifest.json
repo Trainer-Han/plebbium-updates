@@ -1,6 +1,7 @@
 {
  "workspaces": "33575e84f73f7c3b8536ba9b869b416f90f60699b2618ce5514a7197c0e5bdf1",
  "shared-workspaces": "375370d7ede056a5a8a8e4141046a7dab4d3bc374c207dd25bdc3bad58694548",
+ "watch-together": "c991378b3aec6a207679e050ca6ab243aad5d7d0b51ad1e1cdf13a1de64840bd",
  "sidebar": "e37dbe274913f96277be3d1edb74f7ba7690df4e084ba7cb3db2ddb54cb79407",
  "everything-bar": "3a3155cf7f60922b7ec6027a3f8a695ebb80fa20e28cea97712f4c8ed61b6acb",
  "start-window": "9fe6188bf92d789eb4aa4c530420f6c79202e75edb3a582872394b61f42705fa",
