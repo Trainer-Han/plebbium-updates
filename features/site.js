@@ -31,6 +31,10 @@
     const words = find.value.toLowerCase().split(/\s+/).filter(Boolean);
     let shown = 0;
     for (const row of document.querySelectorAll(".row")) {
+      if (row.classList.contains("empty")) {
+        row.hidden = words.length > 0;
+        continue;
+      }
       let inRow = 0;
       for (const card of row.querySelectorAll(".card")) {
         const hit = words.every((w) => card.dataset.words.includes(w));

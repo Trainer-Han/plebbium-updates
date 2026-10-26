@@ -79,6 +79,7 @@ kbd { display: inline-flex; align-items: center; min-height: 24px; padding: 0 7p
 .cb .p { color: var(--muted); font-size: 14px; line-height: 1.45; }
 .meta { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-top: auto; padding-top: 6px; }
 .none { color: var(--muted); padding: 20px 0; }
+.empty-row { margin: 0; padding: 22px 20px; border-radius: 14px; border: 1px dashed rgba(148, 163, 184, 0.3); color: var(--muted); }
 
 .foot { background: linear-gradient(var(--line), var(--line)) 40px 0 / calc(100% - 80px) 1px no-repeat; margin-top: 10px; padding-top: 20px; padding-bottom: 40px; color: var(--faint); font-size: 14px; display: flex; gap: 8px 24px; flex-wrap: wrap; }
 .foot p { margin: 0; }
