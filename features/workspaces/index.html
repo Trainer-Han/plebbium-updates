@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Workspaces · Plebbium features</title>
+<meta name="description" content="Named sets of tabs in one window, switched from icons. Nothing reloads; each can have its own logins.">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../site.css">
+<script src="../site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the features</a>
+<header class="top">
+<a class="brand" href="../"><span class="logo" aria-hidden="true"></span><span class="name">Plebbium</span><span class="sub">Features</span></a>
+<a class="suggest" href="https://sync.plebbian.com/suggest">Suggest a feature</a>
+</header>
+<main id="main" class="wiki">
+<p class="crumbs"><a href="../">All features</a> › <a href="../#shipped">Shipped</a> › Workspaces</p>
+<div class="title"><h1>Workspaces</h1><span class="chip st">Stable</span><span class="since">since 3604</span></div>
+<p class="lead">Named sets of tabs in one window, like Work, Home or a project, switched from icons at the start of the tab strip. Nothing reloads when you switch, and each workspace can have logins of its own.</p>
+<div class="cols">
+<div class="main">
+<figure class="board"><img src="../boards/workspaces.png" width="1200" height="750" alt="A Plebbium window whose tab strip starts with three workspace icons, Work, Home and Project, with a right-click menu on Work offering Rename, Colour, Separate logins and Delete.">
+<figcaption class="sr">What it does: One window, several sets of tabs: an icon each at the start of the tab strip. Switching hides one set and shows another. Nothing reloads. Pinned tabs show in every workspace. Separate logins keep one workspace&#39;s sign-ins apart from the others&#39;.</figcaption></figure>
+<section class="sec" aria-labelledby="h-use"><h2 id="h-use">How to use it</h2><ol class="steps"><li><span>Switch: click a workspace&#39;s icon at the start of the tab strip, or press <kbd>Ctrl+Shift+1</kbd> to <kbd>9</kbd>. With vertical tabs, type <kbd>@</kbd> in the Everything bar.</span></li><li><span>Make one: type <kbd>new workspace Work</kbd> in the Everything bar (<kbd>Ctrl+Shift+A</kbd>).</span></li><li><span>Move a tab: right-click it › Move to workspace.</span></li><li><span>Rename, recolour or delete: right-click the workspace&#39;s icon.</span></li><li><span>Separate logins: right-click the icon › Separate logins. That workspace gets its own cookies, sign-ins and site data; turning it off asks whether to delete them.</span></li></ol></section>
+<section class="sec" aria-labelledby="h-when"><h2 id="h-when">When it arrived</h2><ul class="tl"><li><p class="v"><b>156.0.8078.3604</b><span>18 Oct 2026 · Beta and Stable</span></p><p>Workspaces, with separate logins.</p></li>
+<li><p class="v"><b>156.0.8078.3611</b><span>Beta 21 Oct 2026 · Stable 22 Oct 2026 (3612)</span></p><p>Share a workspace: the same tabs for everyone in it, live.</p></li>
+<li><p class="v"><b>156.0.8078.3612</b><span>22 Oct 2026 · Beta and Stable</span></p><p>Sharing a workspace turns its separate logins off, so everyone in it uses their normal logins.</p></li></ul></section>
+<section class="sec" aria-labelledby="h-why"><h2 id="h-why">Why it works this way</h2><div class="why"><div><h3>Nothing reloads</h3><p>Chromium can&#39;t hide tabs, and teaching its tab strip to would be fought by every Chromium update. So the tabs of a workspace you leave move to a real window that is never shown, the same move as dragging a tab between windows: pages keep their place and what you typed.</p></div><div><h3>Logins kept apart by Chromium itself</h3><p>Separate logins use Chromium&#39;s own storage partitions, the mechanism behind its app windows: each workspace&#39;s cookies and sign-ins are kept apart by the browser, not by an add-on. Pinned tabs keep your normal logins, because they show in every workspace.</p></div><div><h3>Horizontal tabs first</h3><p>The icons live in the horizontal tab strip; with vertical tabs, the Everything bar&#39;s <kbd>@</kbd> reaches every workspace instead.</p></div></div></section>
+
+<nav class="pn" aria-label="More features"><a href="../security-updates/">‹ Automatic security updates</a><a href="../shared-workspaces/">Shared workspaces ›</a></nav>
+</div>
+<aside class="glance" aria-labelledby="h-glance"><h2 id="h-glance">At a glance</h2><dl><div><dt>Status</dt><dd><span class="chip st">Stable</span></dd></div><div><dt>Arrived</dt><dd>156.0.8078.3604 · 18 Oct 2026</dd></div><div><dt>Keys</dt><dd><kbd>Ctrl+Shift+1…9</kbd></dd></div><div><dt>Where</dt><dd>The start of the tab strip; <kbd>@</kbd> in the Everything bar</dd></div><div><dt>Works with</dt><dd><a href="../shared-workspaces/">Shared workspaces</a> · <a href="../sidebar/">Sidebar</a> · <a href="../send-to-device/">Send to device</a></dd></div></dl></aside>
+</div>
+</main>
+<footer class="foot">
+<p>Plebbium is made by Pleb on Chromium. Planned features are plans, not promises. An idea or a bug? In Plebbium, the Pleb button › Suggest a feature or fix.</p>
+<p class="links"><a href="https://sync.plebbian.com/suggest">Suggestion box</a><a href="https://github.com/Trainer-Han/plebbium-updates/releases/tag/download">Download</a></p>
+</footer>
+</body>
+</html>

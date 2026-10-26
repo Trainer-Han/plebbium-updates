@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Blocker · Plebbium features</title>
+<meta name="description" content="Ads, trackers and annoyances blocked by Chromium itself; off for one site in a click.">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../site.css">
+<script src="../site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the features</a>
+<header class="top">
+<a class="brand" href="../"><span class="logo" aria-hidden="true"></span><span class="name">Plebbium</span><span class="sub">Features</span></a>
+<a class="suggest" href="https://sync.plebbian.com/suggest">Suggest a feature</a>
+</header>
+<main id="main" class="wiki">
+<p class="crumbs"><a href="../">All features</a> › <a href="../#shipped">Shipped</a> › Blocker</p>
+<div class="title"><h1>Blocker</h1><span class="chip st">Stable</span><span class="since">since 3604</span></div>
+<p class="lead">Ads, trackers and annoyances such as cookie notices, newsletter pop-ups and app banners are blocked by Chromium itself, from public lists. The count sits on the Pleb button; one click turns blocking off for a site.</p>
+<div class="cols">
+<div class="main">
+<figure class="board"><img src="../boards/blocker.png" width="1200" height="750" alt="The Pleb menu open over a news page: the Blocker with 42 blocked, split into ads, trackers and annoyances, and a Block on this site switch.">
+<figcaption class="sr">What it does: Ads, trackers and annoyances blocked before they load. The count on the Pleb button; the Pleb menu shows what was blocked. Page broken? Turn blocking off for that one site. The lists come inside Plebbium: the browser fetches nothing.</figcaption></figure>
+<section class="sec" aria-labelledby="h-use"><h2 id="h-use">How to use it</h2><ol class="steps"><li><span>Nothing to do: it is on from the start.</span></li><li><span>See what it did: click the Pleb button. The Pleb menu shows the ads, trackers and annoyances blocked on this page.</span></li><li><span>Page broken? In the Pleb menu, turn off Block on this site; the page reloads.</span></li><li><span>For a sidebar site: right-click it › Block ads and trackers.</span></li></ol></section>
+<section class="sec" aria-labelledby="h-when"><h2 id="h-when">When it arrived</h2><ul class="tl"><li><p class="v"><b>156.0.8078.3604</b><span>18 Oct 2026 · Beta and Stable</span></p><p>The blocker, on from the start.</p></li>
+<li><p class="v"><b>156.0.8078.3606</b><span>19 Oct 2026 · Beta and Stable</span></p><p>The blocker&#39;s switch for each sidebar site.</p></li></ul></section>
+<section class="sec" aria-labelledby="h-why"><h2 id="h-why">Why it works this way</h2><div class="why"><div><h3>Chromium blocks, not an add-on</h3><p>The lists become rules Chromium itself applies, so requests are stopped before they leave, and the browser keeps the count.</p></div><div><h3>Exact rules only</h3><p>Filters the browser can express exactly are kept; the rest are dropped, never guessed at, so the blocker doesn&#39;t break pages by approximation.</p></div><div><h3>Public lists, shipped inside</h3><p>EasyList, EasyPrivacy, the EasyList Cookie List and Fanboy&#39;s Annoyance List (without its social part, which hides posts people want to see). They update with Plebbium; the browser fetches nothing.</p></div></div></section>
+
+<nav class="pn" aria-label="More features"><a href="../start-window/">‹ Start window</a><a href="../peek/">Peek ›</a></nav>
+</div>
+<aside class="glance" aria-labelledby="h-glance"><h2 id="h-glance">At a glance</h2><dl><div><dt>Status</dt><dd><span class="chip st">Stable</span></dd></div><div><dt>Arrived</dt><dd>156.0.8078.3604 · 18 Oct 2026</dd></div><div><dt>Where</dt><dd>The Pleb button</dd></div><div><dt>Works with</dt><dd><a href="../sidebar/">Sidebar</a> · <a href="../defaults/">Defaults</a></dd></div></dl></aside>
+</div>
+</main>
+<footer class="foot">
+<p>Plebbium is made by Pleb on Chromium. Planned features are plans, not promises. An idea or a bug? In Plebbium, the Pleb button › Suggest a feature or fix.</p>
+<p class="links"><a href="https://sync.plebbian.com/suggest">Suggestion box</a><a href="https://github.com/Trainer-Han/plebbium-updates/releases/tag/download">Download</a></p>
+</footer>
+</body>
+</html>

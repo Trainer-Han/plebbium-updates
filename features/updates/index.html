@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Updates · Plebbium features</title>
+<meta name="description" content="Plebbium checks briefly as it starts, then asks: Update now installs and restarts.">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../site.css">
+<script src="../site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the features</a>
+<header class="top">
+<a class="brand" href="../"><span class="logo" aria-hidden="true"></span><span class="name">Plebbium</span><span class="sub">Features</span></a>
+<a class="suggest" href="https://sync.plebbian.com/suggest">Suggest a feature</a>
+</header>
+<main id="main" class="wiki">
+<p class="crumbs"><a href="../">All features</a> › <a href="../#shipped">Shipped</a> › Updates</p>
+<div class="title"><h1>Updates</h1><span class="chip st">Stable</span><span class="since">since 3604</span></div>
+<p class="lead">Plebbium checks for updates as it starts and once a day, reading one small file and downloading nothing. When something is new, the Pleb menu opens and asks; Update now downloads it, installs it and restarts, your tabs restored.</p>
+<div class="cols">
+<div class="main">
+<figure class="board"><img src="../boards/updates.png" width="1200" height="750" alt="The Pleb menu open with an update at the top: what&#39;s new, its size, and Update now and Later buttons.">
+<figcaption class="sr">What it does: A short check as it starts and once a day: one small file. The Pleb menu asks: Update now or Later. Update now installs and restarts, your tabs restored. Only updates signed with Plebbium&#39;s key, never an older one.</figcaption></figure>
+<section class="sec" aria-labelledby="h-use"><h2 id="h-use">How to use it</h2><ol class="steps"><li><span>When the Pleb menu opens with an update, press Update now, or Later to be asked at the next start.</span></li><li><span>Check yourself: Plebbium settings › Updates › Check now.</span></li><li><span>Stable or Beta: Plebbium settings › Updates.</span></li></ol></section>
+<section class="sec" aria-labelledby="h-when"><h2 id="h-when">When it arrived</h2><ul class="tl"><li><p class="v"><b>156.0.8078.3604</b><span>18 Oct 2026 · Beta and Stable</span></p><p>Signed updates, on Stable and Beta.</p></li>
+<li><p class="v"><b>156.0.8078.3612</b><span>22 Oct 2026 · Beta and Stable</span></p><p>Updates ask first: the Pleb menu opens with Update now.</p></li></ul></section>
+<section class="sec" aria-labelledby="h-why"><h2 id="h-why">Why it works this way</h2><div class="why"><div><h3>Signed, so only Plebbium&#39;s</h3><p>Every update is checked against a signature by a key only Pleb has; anything else, or anything older than what you run, is refused.</p></div><div><h3>Asks first</h3><p>A check costs about 2 KB and never downloads anything by itself; an update that&#39;s already installed is never fetched again.</p></div><div><h3>Two lanes</h3><p>The whole browser, with Chrome&#39;s security fixes, or just Pleb&#39;s features, which are small and quick.</p></div></div></section>
+
+<nav class="pn" aria-label="More features"><a href="../split-view/">‹ Split view</a><a href="../suggestion-box/">Suggestion box ›</a></nav>
+</div>
+<aside class="glance" aria-labelledby="h-glance"><h2 id="h-glance">At a glance</h2><dl><div><dt>Status</dt><dd><span class="chip st">Stable</span></dd></div><div><dt>Arrived</dt><dd>156.0.8078.3604 · 18 Oct 2026</dd></div><div><dt>Where</dt><dd>The Pleb button · Plebbium settings › Updates</dd></div><div><dt>Works with</dt><dd><a href="../start-window/">Start window</a> · <a href="../suggestion-box/">Suggestion box</a></dd></div></dl></aside>
+</div>
+</main>
+<footer class="foot">
+<p>Plebbium is made by Pleb on Chromium. Planned features are plans, not promises. An idea or a bug? In Plebbium, the Pleb button › Suggest a feature or fix.</p>
+<p class="links"><a href="https://sync.plebbian.com/suggest">Suggestion box</a><a href="https://github.com/Trainer-Han/plebbium-updates/releases/tag/download">Download</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Send to device · Plebbium features</title>
+<meta name="description" content="A tab, link or text to your phone or other PCs. Pair a phone with a QR code; no app needed.">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../site.css">
+<script src="../site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the features</a>
+<header class="top">
+<a class="brand" href="../"><span class="logo" aria-hidden="true"></span><span class="name">Plebbium</span><span class="sub">Features</span></a>
+<a class="suggest" href="https://sync.plebbian.com/suggest">Suggest a feature</a>
+</header>
+<main id="main" class="wiki">
+<p class="crumbs"><a href="../">All features</a> › <a href="../#beta">In Beta</a> › Send to device</p>
+<div class="title"><h1>Send to device</h1><span class="chip be">Beta</span><span class="since">since 3613</span></div>
+<p class="lead">Send a tab, a link or selected text to your phone or your other PCs: into the workspace open there, or a shared workspace that PC joined. A phone pairs with a QR code and gets a Plebbium page on its home screen, no app, and sends back.</p>
+<div class="cols">
+<div class="main">
+<figure class="board"><img src="../boards/send-to-device.png" width="1200" height="750" alt="A tab sent from a Plebbium window to a phone, which shows a notification with Open, and a PC notice offering Open and Open in a shared workspace.">
+<figcaption class="sr">What it does: Tabs, links and text to your phone or other PCs. Into the workspace open there, or a shared one. Phones: a QR code, a page on the home screen, notifications. Nothing opens by itself: a notice with Open.</figcaption></figure>
+<section class="sec" aria-labelledby="h-use"><h2 id="h-use">How to use it</h2><ol class="steps"><li><span>Pair a phone or PC: Plebbium settings › Your devices › Add a device, then scan the QR code. A PC already in your group says yes.</span></li><li><span>Send: right-click a page, link, tab or selected text › Send to device, or the button in the address bar.</span></li><li><span>Receive on a PC: a notice with Open, and Sent to you in the Pleb menu.</span></li><li><span>Send back from a phone: its Plebbium page, or Android&#39;s Share sheet.</span></li></ol></section>
+<section class="sec" aria-labelledby="h-when"><h2 id="h-when">When it arrived</h2><ul class="tl"><li><p class="v"><b>156.0.8078.3613</b><span>Beta 25 Oct 2026 · not on Stable yet</span></p><p>Send to device, to phones and PCs.</p></li></ul></section>
+<section class="sec" aria-labelledby="h-why"><h2 id="h-why">Why it works this way</h2><div class="why"><div><h3>No Google sync needed</h3><p>Chromium&#39;s own sending runs on Google&#39;s sync, which a browser like Plebbium can&#39;t offer everyone. Plebbium&#39;s works for everyone, through Plebbium&#39;s own relay.</p></div><div><h3>Encrypted end to end</h3><p>Everything sent is locked with your devices&#39; shared key; the relay only holds locked data, deletes it once collected, and keeps nothing more than 7 days.</p></div><div><h3>No app</h3><p>A phone uses a page added to its home screen, so Chrome on Android or an iPhone&#39;s browser is enough.</p></div></div></section>
+
+<nav class="pn" aria-label="More features"><a href="../defaults/">‹ Defaults</a><a href="../whats-in-plebbium/">What&#39;s in Plebbium ›</a></nav>
+</div>
+<aside class="glance" aria-labelledby="h-glance"><h2 id="h-glance">At a glance</h2><dl><div><dt>Status</dt><dd><span class="chip be">Beta</span></dd></div><div><dt>Arrived</dt><dd>156.0.8078.3613 · 25 Oct 2026</dd></div><div><dt>Where</dt><dd>Right-click › Send to device · the address bar&#39;s button · Plebbium settings › Your devices</dd></div><div><dt>Works with</dt><dd><a href="../workspaces/">Workspaces</a> · <a href="../shared-workspaces/">Shared workspaces</a></dd></div></dl></aside>
+</div>
+</main>
+<footer class="foot">
+<p>Plebbium is made by Pleb on Chromium. Planned features are plans, not promises. An idea or a bug? In Plebbium, the Pleb button › Suggest a feature or fix.</p>
+<p class="links"><a href="https://sync.plebbian.com/suggest">Suggestion box</a><a href="https://github.com/Trainer-Han/plebbium-updates/releases/tag/download">Download</a></p>
+</footer>
+</body>
+</html>
