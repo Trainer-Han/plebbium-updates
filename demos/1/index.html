@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'none'; base-uri 'none'; form-action 'none'">
+
+<title>Suggestion #1 · Video tabs that play in sync</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; width: 1200px; height: 750px; overflow: hidden; background: #0b1120; color: #e2e8f0; font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif; }
+  .page { width: 1200px; height: 750px; padding: 32px 36px; display: flex; flex-direction: column; gap: 18px; }
+  .head { display: flex; align-items: flex-start; gap: 16px; }
+  .logo { width: 40px; height: 40px; flex: none; border-radius: 12px; background: linear-gradient(135deg, #3b82f6, #8b5cf6 55%, #ec4899); }
+  .kicker { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #8794ab; font-weight: 600; }
+  h1 { margin: 2px 0 0; font: 800 28px/1.15 "Segoe UI Variable Display", "Segoe UI", sans-serif; color: #f8fafc; }
+  .chip { padding: 6px 12px; border-radius: 999px; background: rgba(139,92,246,.18); border: 1px solid rgba(139,92,246,.45); color: #ddd6fe; font-size: 13px; font-weight: 600; white-space: nowrap; }
+  .body { flex: 1; display: flex; gap: 22px; min-height: 0; }
+  .win { flex: 1; min-width: 0; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #262230; color: #e6e3ef; font-size: 12.5px; box-shadow: 0 24px 60px rgba(2,6,23,.55), 0 0 0 1px rgba(148,163,184,.12); }
+  .strip { height: 38px; display: flex; align-items: flex-end; gap: 2px; padding-left: 6px; }
+  .ws { height: 28px; margin: 0 6px 3px 0; padding: 0 10px 0 6px; border-radius: 9px; background: rgba(139,92,246,.18); display: flex; align-items: center; gap: 6px; font-weight: 600; }
+  .ws i { width: 18px; height: 18px; border-radius: 6px; background: #8b5cf6; }
+  .ws em { font-style: normal; font-size: 11px; color: #c4b5fd; font-weight: 600; }
+  .tab { height: 30px; width: 210px; border-radius: 9px 9px 0 0; display: flex; align-items: center; gap: 8px; padding: 0 10px; color: #b6b0c6; }
+  .tab.on { background: #3e384c; color: #e6e3ef; }
+  .fav { width: 15px; height: 15px; border-radius: 50%; flex: none; }
+  .avs { margin-left: auto; display: flex; }
+  .av { width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; font-size: 10px; font-weight: 700; color: #fff; border: 2px solid #3e384c; margin-left: -5px; }
+  .toolbar { height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 10px; background: #3e384c; }
+  .omni { flex: 1; height: 28px; border-radius: 14px; background: #2b2738; display: flex; align-items: center; padding: 0 12px; color: #b6b0c6; }
+  .pleb { width: 22px; height: 22px; border-radius: 7px; background: linear-gradient(135deg, #3b82f6, #8b5cf6 55%, #ec4899); }
+  .content { flex: 1; position: relative; background: #0e0e12; display: grid; place-items: center; }
+  .video { width: 74%; aspect-ratio: 16 / 9; border-radius: 8px; background: linear-gradient(135deg, #1e1b4b, #312e81 60%, #4c1d95); position: relative; display: grid; place-items: center; }
+  .play { width: 64px; height: 64px; border-radius: 50%; background: rgba(15,12,30,.55); border: 2px solid rgba(221,214,254,.5); display: grid; place-items: center; }
+  .bar { position: absolute; left: 14px; right: 14px; bottom: 12px; height: 4px; border-radius: 2px; background: rgba(226,232,240,.25); }
+  .time { position: absolute; left: 14px; bottom: 22px; font-size: 12px; color: #e2e8f0; }
+  .notice { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; align-items: center; padding: 10px 14px; border-radius: 12px; background: #1d1a27; color: #e6e3ef; border: 1px solid rgba(182,176,198,.22); box-shadow: 0 14px 34px rgba(0,0,0,.45); white-space: nowrap; font-size: 13px; }
+  .btn { padding: 5px 12px; border-radius: 8px; background: #a78bfa; color: #1b1033; font-weight: 700; }
+  .ready { position: absolute; right: 16px; bottom: 16px; width: 190px; padding: 10px 12px; border-radius: 12px; background: #1d1a27; border: 1px solid rgba(182,176,198,.22); box-shadow: 0 14px 34px rgba(0,0,0,.45); display: flex; flex-direction: column; gap: 7px; font-size: 12.5px; }
+  .ready h3 { margin: 0 0 2px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #a8a2b8; }
+  .row { display: flex; align-items: center; gap: 8px; }
+  .row .av { margin: 0; border: none; }
+  .ok { margin-left: auto; color: #86efac; font-weight: 600; }
+  .wait { margin-left: auto; color: #fcd34d; font-weight: 600; }
+  .side { width: 330px; flex: none; display: flex; flex-direction: column; gap: 14px; }
+  .side h2 { margin: 0; font: 700 17px "Segoe UI", sans-serif; color: #f8fafc; }
+  .pt { display: flex; gap: 10px; align-items: flex-start; color: #cbd5e1; font-size: 14px; line-height: 1.5; }
+  .pt b { width: 22px; height: 22px; flex: none; border-radius: 50%; background: rgba(139,92,246,.2); color: #ddd6fe; display: grid; place-items: center; font-size: 12px; }
+  .foot { padding: 12px 14px; border-radius: 12px; background: #111a2e; border: 1px solid rgba(148,163,184,.16); color: #94a3b8; font-size: 12.5px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="head">
+    <div class="logo"></div>
+    <div style="flex: 1; min-width: 0">
+      <div class="kicker">Plebbium suggestion #1 · Feature</div>
+      <h1>Shared video tabs wait for everyone, then play in sync</h1>
+    </div>
+    <span class="chip">Automatic sketch · not a promise</span>
+  </div>
+  <div class="body">
+    <div class="win">
+      <div class="strip">
+        <span class="ws"><i></i>Movie night <em>shared</em></span>
+        <div class="tab on"><span class="fav" style="background: #dc2626"></span>A video, shared
+          <span class="avs"><span class="av" style="background: #8b5cf6">Y</span><span class="av" style="background: #0ea5e9">S</span><span class="av" style="background: #f59e0b">A</span></span>
+        </div>
+        <div class="tab"><span class="fav" style="background: #0284c7"></span>Snacks list</div>
+      </div>
+      <div class="toolbar"><div class="omni">a video site</div><span class="pleb"></span></div>
+      <div class="content">
+        <div class="video">
+          <div class="play">
+            <svg width="22" height="24" viewBox="0 0 22 24"><path d="M3 2 L20 12 L3 22 Z" fill="#ddd6fe"></path></svg>
+          </div>
+          <div class="time">0:00 · held for everyone</div>
+          <div class="bar"></div>
+        </div>
+        <div class="notice"><b>Waiting for Ana</b> to load it · then it plays for all from 0:00 <span class="btn">Start anyway</span></div>
+        <div class="ready">
+          <h3>Who is ready</h3>
+          <div class="row"><span class="av" style="background: #8b5cf6">Y</span>You<span class="ok">Ready</span></div>
+          <div class="row"><span class="av" style="background: #0ea5e9">S</span>Sam<span class="ok">Ready</span></div>
+          <div class="row"><span class="av" style="background: #f59e0b">A</span>Ana<span class="wait">Loading</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="side">
+      <h2>What it would do</h2>
+      <div class="pt"><b>1</b><span>In a shared workspace, a video tab holds at the start until everyone in it has loaded it.</span></div>
+      <div class="pt"><b>2</b><span>A small card shows who is ready and who is still loading.</span></div>
+      <div class="pt"><b>3</b><span>When all are ready, it plays for everyone at the same moment, from the same point.</span></div>
+      <div class="pt"><b>4</b><span>Anyone can press Start anyway if someone is taking too long.</span></div>
+      <div style="flex: 1"></div>
+      <div class="foot">Drawn from the suggestion's words and Plebbium's public look only. Pleb decides what gets built.</div>
+    </div>
+  </div>
+</div>
+
+</body></html>
