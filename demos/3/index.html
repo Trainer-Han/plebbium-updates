@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'none'; base-uri 'none'; form-action 'none'">
+
+<title>Suggestion #3 · Weather in the new tab's greeting</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; width: 1200px; height: 750px; overflow: hidden; background: #0b1120; color: #e2e8f0; font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif; }
+  .page { width: 1200px; height: 750px; padding: 32px 36px; display: flex; flex-direction: column; gap: 18px; }
+  .head { display: flex; align-items: flex-start; gap: 16px; }
+  .logo { width: 40px; height: 40px; flex: none; border-radius: 12px; background: linear-gradient(135deg, #3b82f6, #8b5cf6 55%, #ec4899); }
+  .kicker { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #8794ab; font-weight: 600; }
+  h1 { margin: 2px 0 0; font: 800 28px/1.15 "Segoe UI Variable Display", "Segoe UI", sans-serif; color: #f8fafc; }
+  .chip { padding: 6px 12px; border-radius: 999px; background: rgba(139,92,246,.18); border: 1px solid rgba(139,92,246,.45); color: #ddd6fe; font-size: 13px; font-weight: 600; white-space: nowrap; }
+  .body { flex: 1; display: flex; gap: 22px; min-height: 0; }
+  .win { flex: 1; min-width: 0; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #262230; color: #e6e3ef; font-size: 12.5px; box-shadow: 0 24px 60px rgba(2,6,23,.55), 0 0 0 1px rgba(148,163,184,.12); }
+  .strip { height: 38px; display: flex; align-items: flex-end; gap: 2px; padding-left: 6px; }
+  .ws { height: 28px; margin: 0 6px 3px 0; padding: 0 10px 0 6px; border-radius: 9px; background: rgba(59,130,246,.16); display: flex; align-items: center; gap: 6px; font-weight: 600; }
+  .ws i { width: 18px; height: 18px; border-radius: 6px; background: #3b82f6; }
+  .tab { height: 30px; width: 190px; border-radius: 9px 9px 0 0; display: flex; align-items: center; gap: 8px; padding: 0 10px; color: #b6b0c6; }
+  .tab.on { background: #3e384c; color: #e6e3ef; }
+  .fav { width: 15px; height: 15px; border-radius: 50%; flex: none; }
+  .toolbar { height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 10px; background: #3e384c; }
+  .omni { flex: 1; height: 28px; border-radius: 14px; background: #2b2738; display: flex; align-items: center; padding: 0 12px; color: #b6b0c6; }
+  .pleb { width: 22px; height: 22px; border-radius: 7px; background: linear-gradient(135deg, #3b82f6, #8b5cf6 55%, #ec4899); }
+  .content { flex: 1; position: relative; background: linear-gradient(160deg, #1c2640, #2a2244 55%, #3a2948); color: #f4f2fa; }
+  .center { position: absolute; top: 34px; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .clock { font: 800 58px/1 "Segoe UI Variable Display", "Segoe UI", sans-serif; color: #ffffff; letter-spacing: .01em; }
+  .greet { font-size: 22px; font-weight: 600; color: #f4f2fa; }
+  .wx { display: inline-flex; align-items: center; gap: 9px; padding: 7px 10px 7px 12px; border-radius: 999px; background: rgba(15,12,24,.6); border: 1px solid rgba(255,255,255,.2); font-size: 13.5px; color: #f1eefa; }
+  .wx .x { width: 20px; height: 20px; border-radius: 50%; background: rgba(255,255,255,.12); display: grid; place-items: center; color: #d8d3e8; font-size: 13px; line-height: 1; }
+  .search { margin-top: 10px; width: 430px; height: 40px; border-radius: 20px; background: rgba(255,255,255,.94); color: #4b4560; display: flex; align-items: center; padding: 0 16px; font-size: 13.5px; }
+  .tiles { margin-top: 12px; display: flex; gap: 14px; }
+  .tile { width: 64px; display: flex; flex-direction: column; align-items: center; gap: 6px; color: #e2deee; font-size: 11.5px; }
+  .tile span { width: 46px; height: 46px; border-radius: 12px; background: rgba(15,12,24,.5); border: 1px solid rgba(255,255,255,.14); display: grid; place-items: center; }
+  .tile span i { width: 18px; height: 18px; border-radius: 50%; display: block; }
+  .inset { position: absolute; left: 14px; bottom: 14px; padding: 10px 12px; border-radius: 12px; background: #1d1a27; border: 1px solid rgba(182,176,198,.25); box-shadow: 0 14px 34px rgba(0,0,0,.45); display: flex; flex-direction: column; gap: 7px; }
+  .inset small { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #b6b0c6; font-weight: 600; }
+  .inset .row { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; color: #f4f2fa; }
+  .mini { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px 3px 6px; border-radius: 999px; background: rgba(167,139,250,.18); border: 1px solid rgba(167,139,250,.45); color: #ede9fe; font-size: 12.5px; font-weight: 600; }
+  .side { width: 330px; flex: none; display: flex; flex-direction: column; gap: 14px; }
+  .side h2 { margin: 0; font: 700 17px "Segoe UI", sans-serif; color: #f8fafc; }
+  .pt { display: flex; gap: 10px; align-items: flex-start; color: #cbd5e1; font-size: 14px; line-height: 1.5; }
+  .pt b { width: 22px; height: 22px; flex: none; border-radius: 50%; background: rgba(139,92,246,.2); color: #ddd6fe; display: grid; place-items: center; font-size: 12px; }
+  .foot { padding: 12px 14px; border-radius: 12px; background: #111a2e; border: 1px solid rgba(148,163,184,.16); color: #94a3b8; font-size: 12.5px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="head">
+    <div class="logo"></div>
+    <div style="flex: 1; min-width: 0">
+      <div class="kicker">Plebbium suggestion #3 · Feature</div>
+      <h1>Weather in the new tab's greeting, then out of the way</h1>
+    </div>
+    <span class="chip">Automatic sketch · not a promise</span>
+  </div>
+  <div class="body">
+    <div class="win">
+      <div class="strip">
+        <span class="ws"><i></i>Home</span>
+        <div class="tab on"><span class="fav" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6 55%, #ec4899)"></span>New tab</div>
+        <div class="tab"><span class="fav" style="background: #0284c7"></span>A mail site</div>
+      </div>
+      <div class="toolbar"><div class="omni">Search or type a command</div><span class="pleb"></span></div>
+      <div class="content">
+        <div class="center">
+          <div class="clock">14:32</div>
+          <div class="greet">Good afternoon</div>
+          <div class="wx">
+            <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="4.2" fill="#fcd34d"></circle><g stroke="#fcd34d" stroke-width="1.6" stroke-linecap="round"><line x1="10" y1="1.5" x2="10" y2="3.6"></line><line x1="10" y1="16.4" x2="10" y2="18.5"></line><line x1="1.5" y1="10" x2="3.6" y2="10"></line><line x1="16.4" y1="10" x2="18.5" y2="10"></line><line x1="4" y1="4" x2="5.5" y2="5.5"></line><line x1="14.5" y1="14.5" x2="16" y2="16"></line><line x1="4" y1="16" x2="5.5" y2="14.5"></line><line x1="14.5" y1="5.5" x2="16" y2="4"></line></g></svg>
+            <span><b>24° and sunny.</b> UV is high: sunscreen before you go out.</span>
+            <span class="x">×</span>
+          </div>
+          <div class="search">Search the web</div>
+          <div class="tiles">
+            <div class="tile"><span><i style="background: #dc2626"></i></span>Videos</div>
+            <div class="tile"><span><i style="background: #0284c7"></i></span>Mail</div>
+            <div class="tile"><span><i style="background: #16a34a"></i></span>Music</div>
+            <div class="tile"><span><i style="background: #f59e0b"></i></span>News</div>
+            <div class="tile"><span><i style="background: #a78bfa"></i></span>Notes</div>
+          </div>
+        </div>
+        <div class="inset">
+          <small>A few seconds later</small>
+          <div class="row">Good afternoon
+            <span class="mini"><svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="5" fill="#fcd34d"></circle></svg>24°</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="side">
+      <h2>What it would do</h2>
+      <div class="pt"><b>1</b><span>On the new tab, one short weather line sits under the greeting.</span></div>
+      <div class="pt"><b>2</b><span>It says only what matters now: the temperature, and a hint for rain or strong sun.</span></div>
+      <div class="pt"><b>3</b><span>After a few seconds, or when you start typing, it shrinks to a small sun and number. Click that to read it again.</span></div>
+      <div class="pt"><b>4</b><span>You pick the place it shows, and a switch in the new tab's settings hides it.</span></div>
+      <div style="flex: 1"></div>
+      <div class="foot">Drawn from the suggestion's words and Plebbium's public look only. Pleb decides what gets built.</div>
+    </div>
+  </div>
+</div>
+
+</body></html>
