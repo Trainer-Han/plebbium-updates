@@ -19,7 +19,7 @@
 </header>
 <main id="main" class="wiki">
 <p class="crumbs"><a href="../">All features</a> › <a href="../#shipped">Shipped</a> › Shared workspaces</p>
-<div class="title"><h1>Shared workspaces</h1><span class="chip st">Stable</span><span class="since">since 3612</span></div>
+<div class="title"><h1>Shared workspaces</h1><span class="chip st">Stable</span><span class="chip be">New in Beta</span><span class="since">since 3612</span></div>
 <p class="lead">Share a workspace and it stays the same for everyone in it, live: its tabs, tab groups, name and notes. See who is on which tab, follow someone, or point a tab out to the others.</p>
 <div class="cols">
 <div class="main">
@@ -27,12 +27,13 @@
 <figcaption class="sr">What it does: Tabs, groups, the name and notes stay the same for everyone, live. Each person&#39;s avatar sits on the tab they are on. Point out makes a tab flash for the others; Follow takes you along. Encrypted end to end: the relay only ever holds locked data.</figcaption></figure>
 <section class="sec" aria-labelledby="h-use"><h2 id="h-use">How to use it</h2><ol class="steps"><li><span>Share: right-click a workspace&#39;s icon › Share…, then send the invite link.</span></li><li><span>Join: open the invite link. People without Plebbium can follow along on a view-only page in any browser.</span></li><li><span>Point out: right-click a tab › Point out, or the Point out button beside the address bar. The tab flashes for the others, with Go there.</span></li><li><span>Follow someone: you go along to whichever tab they are on.</span></li><li><span>Keep a tab to yourself: right-click it › Keep this tab private. Pinned tabs never leave your PC either.</span></li><li><span>The owner chooses who else may invite, and can remove anyone. Leaving closes the workspace and its tabs on your PC.</span></li></ol></section>
 <section class="sec" aria-labelledby="h-when"><h2 id="h-when">When it arrived</h2><ul class="tl"><li><p class="v"><b>156.0.8078.3611</b><span>Beta 21 Oct 2026 · Stable 22 Oct 2026 (3612)</span></p><p>Shared workspaces: live tabs, avatars, Follow, Point out and invite links.</p></li>
-<li><p class="v"><b>156.0.8078.3612</b><span>22 Oct 2026 · Beta and Stable</span></p><p>Sharing turns a workspace&#39;s separate logins off, so everyone uses their normal logins.</p></li></ul></section>
+<li><p class="v"><b>156.0.8078.3612</b><span>22 Oct 2026 · Beta and Stable</span></p><p>Sharing turns a workspace&#39;s separate logins off, so everyone uses their normal logins.</p></li>
+<li><p class="v"><b>Features 0.9.1</b><span>Beta 30 Oct 2026 · not on Stable yet</span></p><p>Fixed: after a restart, shared tabs no longer double or come back once closed; each PC catches up with the shared list, in its order, and changes made offline still go.</p></li></ul></section>
 <section class="sec" aria-labelledby="h-why"><h2 id="h-why">Why it works this way</h2><div class="why"><div><h3>A relay that can&#39;t read what it passes on</h3><p>Every change is locked on your PC with the workspace&#39;s key before it leaves, and the key travels in the invite link after the #, a part of an address browsers never send to a server. The relay at sync.plebbian.com only passes locked data along.</p></div><div><h3>Your logins stay yours</h3><p>Logins, cookies, passwords and history never leave your PC. Everyone in a shared workspace uses their own normal logins, so each person is signed in as themselves.</p></div><div><h3>Removing someone changes the lock</h3><p>When someone is removed, the workspace gets a new key, handed to each remaining member alone, and old invite links stop working.</p></div></div></section>
 
 <nav class="pn" aria-label="More features"><a href="../workspaces/">‹ Workspaces</a><a href="../watch-together/">Watch together ›</a></nav>
 </div>
-<aside class="glance" aria-labelledby="h-glance"><h2 id="h-glance">At a glance</h2><dl><div><dt>Status</dt><dd><span class="chip st">Stable</span></dd></div><div><dt>Arrived</dt><dd>156.0.8078.3612 · 22 Oct 2026</dd></div><div><dt>Where</dt><dd>Right-click a workspace icon › Share…</dd></div><div><dt>Works with</dt><dd><a href="../workspaces/">Workspaces</a> · <a href="../send-to-device/">Send to device</a></dd></div></dl></aside>
+<aside class="glance" aria-labelledby="h-glance"><h2 id="h-glance">At a glance</h2><dl><div><dt>Status</dt><dd><span class="chip st">Stable</span><span class="chip be">New in Beta</span></dd></div><div><dt>Arrived</dt><dd>156.0.8078.3612 · 22 Oct 2026</dd></div><div><dt>Where</dt><dd>Right-click a workspace icon › Share…</dd></div><div><dt>Works with</dt><dd><a href="../workspaces/">Workspaces</a> · <a href="../send-to-device/">Send to device</a></dd></div></dl></aside>
 </div>
 </main>
 <footer class="foot">
