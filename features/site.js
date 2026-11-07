@@ -23,6 +23,21 @@
     update();
   }
 
+  // Plebbiums in use (decision C54): from stats.json beside this folder,
+  // refreshed daily from the update checks; counts only.
+  const inUse = document.getElementById("in-use");
+  if (inUse) {
+    fetch("../stats.json", { cache: "no-cache" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((s) => {
+        if (!s || !Number.isInteger(s.inUse30d) || s.inUse30d < 1) return;
+        inUse.textContent = `${s.inUse30d} Plebbium${s.inUse30d === 1 ? "" : "s"} in use`;
+        inUse.title = `Plebbiums that checked for updates in the last 30 days (an estimate), as of ${s.updated}`;
+        inUse.hidden = false;
+      })
+      .catch(() => {});
+  }
+
   const find = document.getElementById("find");
   if (!find) return;
   find.parentElement.hidden = false;

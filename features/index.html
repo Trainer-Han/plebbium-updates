@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Plebbium features</title>
 <meta name="description" content="Every Plebbium feature, shipped, in Beta and planned, the way it looks.">
@@ -21,7 +21,7 @@
 <section class="hero">
 <h1>Everything in Plebbium</h1>
 <p class="lead">A Chromium browser for Windows with Pleb's features built in. Each one is shown the way it looks; open it for how to use it, when it arrived and why it works the way it does.</p>
-<p class="vers"><span class="ver st">Stable 156.0.8078.3617</span><span class="ver be">Beta 156.0.8078.3617</span><span class="since">Updated 7 Nov 2026</span></p>
+<p class="vers"><span class="ver st">Stable 156.0.8078.3617</span><span class="ver be">Beta 156.0.8078.3618</span><span class="ver us" id="in-use" hidden></span><span class="since">Updated 7 Nov 2026</span></p>
 <p class="find" hidden><label for="find">Find a feature</label><input id="find" type="search" placeholder="Find a feature" autocomplete="off"></p>
 </section>
 <section class="row" id="shipped" aria-labelledby="h-shipped">
@@ -129,10 +129,15 @@
 <span class="cb"><span class="h">What&#39;s in Plebbium</span><span class="p">This page, one click away in the Pleb menu.</span>
 <span class="meta"><span class="chip st">Stable</span><span class="since">since features 0.7.3</span></span></span></a></li>
 </ul></section>
-<section class="row empty" id="beta" aria-labelledby="h-beta">
-<div class="rowhead"><h2 id="h-beta">In Beta</h2><p class="sub">New features land here first. Plebbium settings › Updates switches to Beta</p><p class="n"></p>
-</div>
-<p class="empty-row">Nothing in Beta right now: Beta is the same as Stable.</p></section>
+<section class="row" id="beta" aria-labelledby="h-beta">
+<div class="rowhead"><h2 id="h-beta">In Beta</h2><p class="sub">New features land here first. Plebbium settings › Updates switches to Beta</p><p class="n">1 feature</p>
+<div class="arrows" hidden><button type="button" class="prev" aria-label="Scroll In Beta back"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="next" aria-label="Scroll In Beta on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div></div>
+<ul class="gallery" tabindex="0" aria-label="In Beta">
+<li class="card" data-words="incognito incognito windows in plebbium&#39;s own look, with the everything bar - and nothing kept.">
+<a href="incognito/"><img src="boards/incognito-card.png" width="600" height="375" alt="" loading="lazy" decoding="async">
+<span class="cb"><span class="h">Incognito</span><span class="p">Incognito windows in Plebbium&#39;s own look, with the Everything bar - and nothing kept.</span>
+<span class="meta"><span class="chip be">Beta</span><span class="since">since 3618</span></span></span></a></li>
+</ul></section>
 <section class="row" id="planned" aria-labelledby="h-planned">
 <div class="rowhead"><h2 id="h-planned">Planned</h2><p class="sub">Not in Plebbium yet. Plans can change</p><p class="n">2 features</p>
 <div class="arrows" hidden><button type="button" class="prev" aria-label="Scroll Planned back"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="next" aria-label="Scroll Planned on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div></div>
