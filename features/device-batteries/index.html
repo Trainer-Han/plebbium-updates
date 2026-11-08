@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Device batteries · Plebbium features</title>
-<meta name="description" content="Your headphones&#39;, mouse&#39;s and phone&#39;s batteries in the new tab&#39;s widgets strip.">
+<meta name="description" content="Your headphones&#39;, mouse&#39;s and phone&#39;s batteries in the new tab&#39;s widgets strip - SteelSeries headsets too.">
 <link rel="icon" href="../icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../site.css">
 <script src="../site.js" defer></script>
@@ -20,14 +20,15 @@
 <main id="main" class="wiki">
 <p class="crumbs"><a href="../">All features</a> › <a href="../#beta">In Beta</a> › Device batteries</p>
 <div class="title"><h1>Device batteries</h1><span class="chip be">Beta</span><span class="since">since 3619</span></div>
-<p class="lead">A card in the new tab&#39;s widgets strip with the batteries of your Bluetooth headphones, mice, keyboards, phones and controllers - and your laptop&#39;s - lowest first, with a nudge when one is low.</p>
+<p class="lead">A card in the new tab&#39;s widgets strip with the batteries of your connected Bluetooth headphones, mice, keyboards, phones and controllers, your SteelSeries Arctis headset on its USB receiver, and your laptop - lowest first, with a nudge when one is low.</p>
 <div class="cols">
 <div class="main">
-<figure class="board"><img src="../boards/device-batteries.png" width="1200" height="750" alt="The new tab&#39;s widgets strip open on a card: your devices, headphones 18 percent in amber, mouse 62, phone 80, and a nudge to charge the headphones.">
-<figcaption class="sr">What it does: Bluetooth headphones, mice, keyboards, phones, controllers. Lowest first; a nudge at 20% or less. Your laptop&#39;s own battery too. Read on this PC; nothing leaves it.</figcaption></figure>
+<figure class="board"><img src="../boards/device-batteries.png" width="1200" height="750" alt="The new tab&#39;s widgets strip open on a card: your devices, headphones 18 percent in amber, mouse 62, an Arctis Nova 7 charging at 64, and a nudge to charge the headphones.">
+<figcaption class="sr">What it does: Connected Bluetooth devices, live - no old readings. SteelSeries Arctis headsets, read from their receiver. Lowest first; a nudge at 20% or less; a bolt while charging. Read on this PC; nothing leaves it.</figcaption></figure>
 <section class="sec" aria-labelledby="h-use"><h2 id="h-use">How to use it</h2><ol class="steps"><li><span>Look: rest on the new tab&#39;s right edge, or click it.</span></li><li><span>Off: Plebbium settings › Widgets › Show your devices&#39; batteries.</span></li></ol></section>
-<section class="sec" aria-labelledby="h-when"><h2 id="h-when">When it arrived</h2><ul class="tl"><li><p class="v"><b>156.0.8078.3619</b><span>Beta 7 Nov 2026 · not on Stable yet</span></p><p>Device batteries in the widgets strip.</p></li></ul></section>
-<section class="sec" aria-labelledby="h-why"><h2 id="h-why">Why it works this way</h2><div class="why"><div><h3>What Windows knows</h3><p>The levels are the ones Windows shows in Settings › Bluetooth &amp; devices; Plebbium reads them on your PC, and nothing leaves it.</p></div><div><h3>Not every device</h3><p>Devices on their own USB receiver often don&#39;t tell Windows their battery, so Plebbium can&#39;t see them either.</p></div></div></section>
+<section class="sec" aria-labelledby="h-when"><h2 id="h-when">When it arrived</h2><ul class="tl"><li><p class="v"><b>156.0.8078.3619</b><span>Beta 7 Nov 2026 · not on Stable yet</span></p><p>Device batteries in the widgets strip.</p></li>
+<li><p class="v"><b>156.0.8078.3620</b><span>Beta 8 Nov 2026 · not on Stable yet</span></p><p>Only connected Bluetooth devices; SteelSeries Arctis headsets; a charging bolt.</p></li></ul></section>
+<section class="sec" aria-labelledby="h-why"><h2 id="h-why">Why it works this way</h2><div class="why"><div><h3>What Windows knows</h3><p>The levels are the ones Windows shows in Settings › Bluetooth &amp; devices; Plebbium reads them on your PC, and nothing leaves it.</p></div><div><h3>Not every device</h3><p>Devices on their own USB receiver often don&#39;t tell Windows their battery. SteelSeries Arctis headsets are the exception: Plebbium asks their receiver itself, as SteelSeries GG does (tested on an Arctis Nova 7; the other Arctis models follow the open-source HeadsetControl project&#39;s notes).</p></div></div></section>
 
 <nav class="pn" aria-label="More features"><a href="../public-holidays/">‹ Public holidays</a><a href="../formula-1/">Formula 1 ›</a></nav>
 </div>
